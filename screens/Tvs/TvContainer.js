@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
-import { tvApi } from '../api';
+import { tvApi } from '../../api';
 
-const Tv = () => {
+const TvContainer = () => {
     const [tvs, setTvs] = useState({
         airing_today: [],
         on_the_air: [],
@@ -49,4 +49,4 @@ const Tv = () => {
     );
 };
 
-export default Tv;
+export default TvContainer;

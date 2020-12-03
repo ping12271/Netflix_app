@@ -14,8 +14,10 @@ const makeRequest = (path, params) => {
 const getAnything = async(path, params = {}) => {
     try {
         const {
-            data: {results}
+            data: {results},
+            data
         } = await makeRequest(path, params)
+        return [results || data, null]
     } catch (e) {
         return [null, e]; //async await 비동기방식
     }

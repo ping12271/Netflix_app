@@ -5,6 +5,7 @@ import MoviePresenter from './MoviePresenter';
 
 const MovieContainer = () => {
     const [movies, setMovies] = useState({
+        loading: true,
         nowPlaying: [],
         popular: [],
         upcoming: [],
@@ -20,6 +21,7 @@ const MovieContainer = () => {
        const [upcoming, upcomingError] = await movieApi.upcoming();
        console.log(nowPlaying)
        setMovies({
+           loading: false,
            nowPlaying: nowPlaying, // nowPlaying라는 배열에 nowPlaying 데이터를 넣겠다는 의미
            popular: popular,
            upcoming: upcoming,
@@ -34,7 +36,7 @@ const MovieContainer = () => {
     }, [])
 
     return (
-        <MoviePresenter />
+        <MoviePresenter {...movies}/>
     );
 };
 

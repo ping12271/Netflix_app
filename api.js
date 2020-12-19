@@ -35,6 +35,10 @@ export const tvApi = {
     popular: () => getAnything("/tv/popular"),
 }
 
+export const apiImage = (path) => (
+    `https://image.tmdb.org/t/p/w500${path}`
+)
+
 // const makeRequest = (path, params) => {
 //     axios.get(`https://api.themoviedb.org/3${path}`, {
 //         params: {

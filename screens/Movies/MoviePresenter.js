@@ -33,10 +33,12 @@ const MoviePresenter = ({ loading, nowPlaying, popular, upcoming }) => {
                         {nowPlaying.map(movie => (
                           <Section key={movie.id}>
                               <Slide 
+                                    id={movie.id}
                                     title={movie.title}
                                     votes={movie.vote_average}
                                     overview={movie.overview}
-                                    imgUrl={movie.poster_path}
+                                    imgUrl={movie.backdrop_path}
+                                    poster={movie.poster_path}
                               />
                           </Section>  
                         ))}

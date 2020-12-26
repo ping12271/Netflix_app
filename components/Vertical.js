@@ -11,13 +11,10 @@ const Vertical = ({id, title, date, poster, overView}) => {
                 <Poster src={poster}/>
                 <View style={styles.data}>
                     <Text style={styles.title}>{trimText(title, 30)}</Text>
-                    {date ? <Text style={styles.date}>{formDate(date)}</Text>
-                        : null
-                    }
+                    {date ? <Text style={styles.date}>{formDate(date)}</Text> : null}
                     <Text style={styles.overView}>{trimText(overView, 120)}</Text>
                 </View>
             </View>
-
         </TouchableOpacity>
     );
 };

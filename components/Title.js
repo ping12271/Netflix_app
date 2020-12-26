@@ -20,6 +20,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16,
         marginBottom: 20,
-        marginLeft: 10
+        marginLeft: 16
     }
 })

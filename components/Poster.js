@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 import { Image } from 'react-native';
 import { apiImage } from '../api';
 
-const Poster = ({url}) => {
+const Poster = ({src}) => {
     return (
         <Image 
-            source={{ uri: apiImage(url) }}
+            source={{ uri: apiImage(src) }}
             style={{ width: 100, height: 130, borderRadius: 4 }}
         />
     );
 };
 
 Poster.propTypes = {
-    url: PropTypes.string
+    src: PropTypes.string
 };
 
 export default Poster;

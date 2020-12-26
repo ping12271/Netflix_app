@@ -42,11 +42,12 @@ export default Slide;
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        height: '100%'
+        height: '100%',
     },
     content: {
         flexDirection: 'row',
-        alignContent: 'space-around',
+        alignItems: 'center',
+        justifyContent: 'space-around',
         height: '100%',
     },
     data: {

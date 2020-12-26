@@ -5,7 +5,7 @@ import { Dimensions, ActivityIndicator, ActivityIndicatorBase, StyleSheet, View 
 import { Slide } from '../../components';
 import { ScrollView } from 'react-native-gesture-handler';
 import Title from '../../components/Title';
-import Vertical from '../../components/Vertical';
+import Horizental from '../../components/Horizental';
 
 const { width, height } = Dimensions.get('screen');
 
@@ -57,7 +57,7 @@ const MoviePresenter = ({ loading, nowPlaying, popular, upcoming }) => {
                         <Title title={"Popular Movies"}/>
                         <ScrollView horizontal>
                             {popular.map(movie => (
-                                <Vertical 
+                                <Horizental 
                                     key={movie.id}
                                     poster={movie.poster_path}
                                     title={movie.title}

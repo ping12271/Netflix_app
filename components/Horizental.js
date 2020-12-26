@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Poster from './Poster';
 import Votes from './Votes';
 
-const Vertical = ({poster, title, vote}) => {
+const Horizental = ({poster, title, vote}) => {
     return (
         <View style={styles.container}>
             <Poster src={poster} />
@@ -14,13 +14,13 @@ const Vertical = ({poster, title, vote}) => {
     );
 };
 
-Vertical.propTypes = {
+Horizental.propTypes = {
     poster: PropTypes.string,
     title: PropTypes.string.isRequired,
     vote: PropTypes.number
 };
 
-export default Vertical;
+export default Horizental;
 
 //rscp 단축키
 

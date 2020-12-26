@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { tvApi } from '../../api';
-import  TvPresenter from './TvPresenter';
+import TvPresenter from './TvPresenter';
 
 const TvContainer = () => {
     const [tvs, setTvs] = useState({

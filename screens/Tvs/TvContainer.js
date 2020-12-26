@@ -38,7 +38,7 @@ const TvContainer = () => {
     }, [])
 
     return (
-        <View style={{flex:1, backgroundColor: 'black'}}>
+        <View style={{ flex:1, backgroundColor: 'black' }}>
             <Text style={{color: 'white'}}>
                 {tvs.popular?.length}
             </Text>

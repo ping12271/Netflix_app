@@ -6,6 +6,7 @@ import { Slide } from '../../components';
 import { ScrollView } from 'react-native-gesture-handler';
 import Title from '../../components/Title';
 import Horizental from '../../components/Horizental';
+import Vertical from '../../components/Vertical';
 
 const { width, height } = Dimensions.get('window');
 
@@ -30,7 +31,7 @@ const MoviePresenter = ({ loading, nowPlaying, popular, upcoming }) => {
     return (
         <ScrollView 
             style={{ backgroundColor: 'black' }}
-            contentContainerStyle={{flex: 1, justifyContent: loading ? 'center' : 'flex-start'}}
+            contentContainerStyle={{ flex: loading ? 1 : "auto", justifyContent: loading ? 'center' : 'flex-start' }}
         >
             {loading ? (
                 <ActivityIndicator color="white" size="large" /> // 로딩바
@@ -55,7 +56,12 @@ const MoviePresenter = ({ loading, nowPlaying, popular, upcoming }) => {
 
                     <View>
                         <Title title={"Popular Movies"}/>
-                        <ScrollView horizontal>
+                        <ScrollView 
+                            stlye={{marginTop: 20}}
+                            contentContainerStyle={{paddingLeft: 30}}
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
+                        >
                             {popular.map(movie => (
                                 <Horizental 
                                     key={movie.id}
@@ -66,6 +72,19 @@ const MoviePresenter = ({ loading, nowPlaying, popular, upcoming }) => {
                                 />
                             ))}
                         </ScrollView>
+                        <View>
+                            <Title title={"Comming Soon"}/>
+                            {upcoming.map(movie => (
+                                <Vertical 
+                                    key={movie.id}
+                                    id={movie.id}
+                                    title={movie.title}
+                                    date={movie.release_date}
+                                    poster={movie.poster_path}
+                                    overView={movie.overview}
+                                />
+                            ))}
+                        </View>
                     </View>
                 </>
             )}

@@ -2,7 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Poster } from '../../components';
 import { apiImage } from '../../api'
+import { trimText } from '../../components/utils'
 import PropTypes from 'prop-types';
+import Votes from '../Votes';
 
 const Slide = ({title, votes, overview, imgUrl, poster}) => {
     return (
@@ -14,9 +16,9 @@ const Slide = ({title, votes, overview, imgUrl, poster}) => {
             <View style={styles.content}>
                 <Poster src={poster} />
                 <View style={styles.data}>
-                    <Text style={styles.titleText}>{title.slice(0, 30)}</Text>
-                    <Text style={styles.votesText}>⭐ {votes} / 10</Text>
-                    <Text style={styles.overviewText}>{overview.slice(0, 120)}...</Text>
+                    <Text style={styles.titleText}>{trimText(title, 40)}</Text>
+                    <Votes vote={votes} />
+                    <Text style={styles.overviewText}>{trimText(overview, 120)}</Text>
                     <TouchableOpacity onPress={() => alert("야")}>
                         <View style={styles.button}>
                             <Text style={styles.buttonText}>View Detail</Text>

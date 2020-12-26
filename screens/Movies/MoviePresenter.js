@@ -7,7 +7,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import Title from '../../components/Title';
 import Horizental from '../../components/Horizental';
 
-const { width, height } = Dimensions.get('screen');
+const { width, height } = Dimensions.get('window');
 
 const Container = styled.View`
     flex: 1;
@@ -18,7 +18,7 @@ const Container = styled.View`
 const SlideContainer = styled.View`
     width: ${width}px;
     height: ${height / 3}px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;xs
 `;
 
 const Section = styled.View`
@@ -59,6 +59,7 @@ const MoviePresenter = ({ loading, nowPlaying, popular, upcoming }) => {
                             {popular.map(movie => (
                                 <Horizental 
                                     key={movie.id}
+                                    id={movie.id}
                                     poster={movie.poster_path}
                                     title={movie.title}
                                     vote={movie.vote_average}

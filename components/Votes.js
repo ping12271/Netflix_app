@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 const Votes = ({vote}) => {
     return (
-        <Text style={styles.contaienr}>
+        <Text style={styles.container}>
             ⭐ {vote} / 10
         </Text>
     );
@@ -18,9 +18,9 @@ export default Votes;
 
 const styles = StyleSheet.create({
     container: {
-        color: 'rgba(220, 220, 220, 1)',
+        color: 'rgb(220, 220, 220)',
         marginBottom: 7,
         fontWeight: '500',
-        fontSize: 10
+        fontSize: 12
     }
 })

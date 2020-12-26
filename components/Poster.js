@@ -7,7 +7,7 @@ const Poster = ({src}) => {
     return (
         <Image 
             source={{ uri: apiImage(src) }}
-            style={{ width: 100, height: 130, borderRadius: 4 }}
+            style={{ width: 120, height: 150, borderRadius: 4 }}
         />
     );
 };

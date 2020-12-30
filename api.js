@@ -27,7 +27,8 @@ export const movieApi = {
     popular: () => getAnything("/movie/popular"),
     upcoming: () => getAnything("/movie/upcoming"),
     search: (query) => getAnything("/search/movie", {query}),
-    detail: (id) => getAnything(`/movie/${id}`)
+    detail: (id) => getAnything(`/movie/${id}`),
+    similar: (id) => getAnything(`/movie/${id}/similar`)
 };
 
 export const tvApi = {

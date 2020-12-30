@@ -10,9 +10,13 @@ const DetailContainer = ({route: {params: {id, title}}}) => {
 
     const [data, setData] = useState({});
 
+    const [similar, setSimilar] = useState([])
+   
     const getData = async () => {
         const [movieData, movieDataError] = await movieApi.detail(id)
+        const [similarData, similarDataError] = await movieApi.similar(id)
         setData(movieData)
+        setSimilar(similarData)
     }
 
 
@@ -29,8 +33,10 @@ const DetailContainer = ({route: {params: {id, title}}}) => {
         <DetailPresenter 
             id={id}
             title={title}
-            poster_path={data.poster_path}
+            backdrop_path={data.backdrop_path}
             overView={data.overview}
+            poster={data.poster_path}
+            votes={data.vote_average}
         />
     );
 };

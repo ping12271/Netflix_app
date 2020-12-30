@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Text, View } from 'react-native';
 import { movieApi, tvApi } from '../../api';
 import DetailPresenter from './DetailPresenter';
 
@@ -37,6 +36,8 @@ const DetailContainer = ({route: {params: {id, title}}}) => {
             overView={data.overview}
             poster={data.poster_path}
             votes={data.vote_average}
+            date={data.release_date}
+            language={data.original_language}
         />
     );
 };

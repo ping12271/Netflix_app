@@ -1,13 +1,16 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import Poster from './Poster';
 import Votes from './Votes';
 import { trimText } from '../components/utils'
 
-const Horizental = ({poster, title, vote}) => {
+const Horizental = ({id, poster, title, vote}) => {
+    const navigation = useNavigation();
+
     return (
-        <TouchableOpacity onPress={() => alert('이이이')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Detail', {id, title})}>
             <View style={styles.container}>
                 <Poster src={poster} />
                 <Text style={styles.title}>{trimText(title, 10)}</Text>

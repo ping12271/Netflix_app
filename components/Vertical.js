@@ -1,12 +1,14 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import PropTypes from 'prop-types';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import Poster from './Poster';
 import { trimText, formDate } from './utils';
 
 const Vertical = ({id, title, date, poster, overView}) => {
+    const navigation = useNavigation();
     return (
-        <TouchableOpacity onPress={()=> alert('야호')}>
+        <TouchableOpacity onPress={()=> navigation.navigate('Detail', {id, title})}>
             <View style={styles.container}>
                 <Poster src={poster}/>
                 <View style={styles.data}>

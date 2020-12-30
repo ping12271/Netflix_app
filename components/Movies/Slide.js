@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Poster } from '../../components';
 import { apiImage } from '../../api'
@@ -6,7 +7,8 @@ import { trimText } from '../../components/utils'
 import PropTypes from 'prop-types';
 import Votes from '../Votes';
 
-const Slide = ({title, votes, overview, imgUrl, poster}) => {
+const Slide = ({id, title, votes, overview, imgUrl, poster}) => {
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <Image 
@@ -19,7 +21,7 @@ const Slide = ({title, votes, overview, imgUrl, poster}) => {
                     <Text style={styles.titleText}>{trimText(title, 40)}</Text>
                     <Votes vote={votes} />
                     <Text style={styles.overviewText}>{trimText(overview, 120)}</Text>
-                    <TouchableOpacity onPress={() => alert("야")}>
+                    <TouchableOpacity onPress={() => navigation.push('Detail', { title, id })}>
                         <View style={styles.button}>
                             <Text style={styles.buttonText}>View Detail</Text>
                         </View>
